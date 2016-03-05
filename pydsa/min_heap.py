@@ -30,9 +30,9 @@ class MinHeap():
         if child==1: 
             return
         parent = child/2
-        print child,parent
+        #print child,parent
         while child>=2 and self.heap[child]<self.heap[parent]:
-            print child,parent
+            #print child,parent
             temp = self.heap[child]
             self.heap[child]=self.heap[parent]
             self.heap[parent]=temp
