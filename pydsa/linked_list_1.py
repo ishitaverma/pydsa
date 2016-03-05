@@ -41,11 +41,24 @@ class linked_list(object):
 			raise ValueError("not present")
 		return curr_node
 
-	def print_node(self):
+	def delete(self, data):
 		curr_node=self.head
-		while(curr_node.return_next() is not None):
-			print curr_node.return_data
-			curr_node=curr_node.return_next();
+		prev_node=None
+		found_flag=False
+		while curr_node is not None and found_flag is False:
+			if curr_node.return_data()==data:
+				found_flag=True
+			else:
+				prev_node=curr_node
+				curr_node=curr_node.return_next()
+		if curr_node is None:
+			raise ValueError("Not present")
+		if prev_node is None:
+			self.head=curr_node.return_next()
+		else:
+			prev_node.make_next(curr_node.return_next())
+
+		
 
 
 
