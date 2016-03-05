@@ -22,13 +22,23 @@ def test_linked_list_1():
         self.test_list.insert_beginning("b")
         self.test_list.insert_beginning("c")
 
-        found = self.test_list.find("ax")
-        self.assertTrue(found.return_data() == "ay")
+        found = self.test_list.find("a")
+        self.assertTrue(found.return_data() == "a")
 
         found = self.test_list.find("b")
         self.assertTrue(found.return_data() == "b")
 
-        found = self.testlist.find("c")
+        found = self.test_list.find("c")
         self.assertTrue(found.return_data() == "c")
+
+    def test_delete(self):
+        self.test_list.insert_beginning("a")
+        self.test_list.insert_beginning("b")
+        self.test_list.insert_beginning("c")
+
+        self.test_list.delete("c")
+        self.assertTrue(self.test_list.head.return_data() == "b")
+        self.list.delete("a")
+        self.assertTrue(self.test_list.head.return_next() is None)
 
         
